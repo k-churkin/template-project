@@ -1,12 +1,12 @@
 from typing import Annotated
 
-from fastapi import APIRouter
-from fastapi.params import Depends
+from fastapi import APIRouter, Depends
 
 from my_project.api.dependencies import get_service
-from src.my_project.services.service import Service
+from my_project.services.service import Service
 
-router = APIRouter(prefix="/")
+router = APIRouter(prefix="v1")
+
 
 @router.get("/{item_id:int}")
 async def get_feature(
